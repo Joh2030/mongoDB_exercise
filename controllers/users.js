@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const User = require("../models/user");
 
 const createUser = async (req, res) => {
   try {
@@ -11,7 +12,7 @@ const createUser = async (req, res) => {
 };
 const getUsers = async (req, res) => {
   try {
-    const user = await User.find({});
+    const users = await User.find({});
     res.status(201).json(users);
   } catch (error) {
     res.status(500).send(error.message);
